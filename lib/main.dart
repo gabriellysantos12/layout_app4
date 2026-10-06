@@ -212,10 +212,36 @@ class TelaDashboard extends StatelessWidget {
                     ),
                   ),
                 ),
+
+                // ===== DESAFIO 5 =====
+                // Adicionado selo Confirmado no canto inferior esquerdo
+                Positioned(
+                  bottom: -8,
+                  left: -8,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 4,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: const Text(
+                      'Confirmado',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 10,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
- 		// ===== DESAFIO 3 =====
-            	// Adicionada a seção Ultimos Registros
+
+            // ===== DESAFIO 3 =====
+            // Adicionada a seção Ultimos Registros
             const SizedBox(height: 24.0),
 
             Container(
@@ -245,7 +271,8 @@ class TelaDashboard extends StatelessWidget {
                 ],
               ),
             ),
-	    // ===== DESAFIO 4 =====
+
+            // ===== DESAFIO 4 =====
             // Removido Expanded e adicionado texto longo para provocar overflow
             const SizedBox(height: 24.0),
 
@@ -266,4 +293,3 @@ class TelaDashboard extends StatelessWidget {
     );
   }
 }
-    
