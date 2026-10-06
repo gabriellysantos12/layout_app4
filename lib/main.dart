@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'widgets/bloco_estatistica.dart';
 
 void main() {
   runApp(const MeuLayoutApp());
@@ -50,99 +51,35 @@ class TelaDashboard extends StatelessWidget {
  
             // ===== DESAFIO 1 =====
             // Adicionado terceiro Card de Fotos
+
+            // ===== DESAFIO 7 =====
+            // Criado widget BlocoEstatistica para reutilizar os cards
             Row(
               children: [
                 Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(16.0),
-                    decoration: BoxDecoration(
-                      color: Colors.teal.shade100,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Column(
-                      children: const [
-                        Icon(Icons.flutter_dash, size: 36, color: Colors.teal),
-                        SizedBox(height: 8),
-                        Text(
-                          '124',
-                          style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          'Aves Vistas',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.grey,
-                          ),
-                        ),
-                      ],
-                    ),
+                  child: BlocoEstatistica(
+                    icone: Icons.flutter_dash,
+                    numero: '124',
+                    descricao: 'Aves Vistas',
+                    cor: Colors.teal.shade100,
                   ),
                 ),
                 const SizedBox(width: 12.0),
                 Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(16.0),
-                    decoration: BoxDecoration(
-                      color: Colors.teal.shade50,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Column(
-                      children: const [
-                        Icon(Icons.place, size: 36, color: Colors.teal),
-                        SizedBox(height: 8),
-                        Text(
-                          '18',
-                          style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          'Locais Visitados',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.grey,
-                          ),
-                        ),
-                      ],
-                    ),
+                  child: BlocoEstatistica(
+                    icone: Icons.place,
+                    numero: '18',
+                    descricao: 'Locais Visitados',
+                    cor: Colors.teal.shade50,
                   ),
                 ),
                 const SizedBox(width: 12.0),
                 Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(16.0),
-                    decoration: BoxDecoration(
-                      color: Colors.teal.shade100,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Column(
-                      children: const [
-                        Icon(
-                          Icons.camera_alt,
-                          size: 36,
-                          color: Colors.teal,
-                        ),
-                        SizedBox(height: 8),
-                        Text(
-                          '45',
-                          style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          'Fotos',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.grey,
-                          ),
-                        ),
-                      ],
-                    ),
+                  child: BlocoEstatistica(
+                    icone: Icons.camera_alt,
+                    numero: '45',
+                    descricao: 'Fotos',
+                    cor: Colors.teal.shade100,
                   ),
                 ),
               ],
