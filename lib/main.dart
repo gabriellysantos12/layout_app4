@@ -13,9 +13,7 @@ class MeuLayoutApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'PPDM - Layout Widgets',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.teal,
-        ),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
         useMaterial3: true,
       ),
       home: const TelaDashboard(),
@@ -30,65 +28,41 @@ class TelaDashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'PPDM - Dashboard de Observacoes',
-        ),
+        title: const Text('PPDM - Dashboard de Observacoes'),
         centerTitle: true,
         backgroundColor: Colors.teal,
         foregroundColor: Colors.white,
       ),
-
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
-
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+
+          // ===== DESAFIO 2 =====
+          // Alterado o alinhamento para o centro
+          crossAxisAlignment: CrossAxisAlignment.center,
 
           children: [
             const Text(
               'Resumo das Observacoes',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-
             const SizedBox(height: 16.0),
-
-            // ==========================================
-            // DESAFIO 01
-            // Adicionado um terceiro Card com:
-            // Icon: camera_alt
-            // Contagem: 45
-            // Legenda: Fotos
-            // Os 3 cards utilizam Expanded
-            // ==========================================
-
+ 
+            // ===== DESAFIO 1 =====
+            // Adicionado terceiro Card de Fotos
             Row(
               children: [
-                // ======================================
-                // CARD 1 - AVES VISTAS
-                // ======================================
-
                 Expanded(
                   child: Container(
                     padding: const EdgeInsets.all(16.0),
-
                     decoration: BoxDecoration(
                       color: Colors.teal.shade100,
                       borderRadius: BorderRadius.circular(12),
                     ),
-
                     child: Column(
                       children: const [
-                        Icon(
-                          Icons.flutter_dash,
-                          size: 36,
-                          color: Colors.teal,
-                        ),
-
+                        Icon(Icons.flutter_dash, size: 36, color: Colors.teal),
                         SizedBox(height: 8),
-
                         Text(
                           '124',
                           style: TextStyle(
@@ -96,7 +70,6 @@ class TelaDashboard extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-
                         Text(
                           'Aves Vistas',
                           style: TextStyle(
@@ -108,32 +81,18 @@ class TelaDashboard extends StatelessWidget {
                     ),
                   ),
                 ),
-
                 const SizedBox(width: 12.0),
-
-                // ======================================
-                // CARD 2 - LOCAIS VISITADOS
-                // ======================================
-
                 Expanded(
                   child: Container(
                     padding: const EdgeInsets.all(16.0),
-
                     decoration: BoxDecoration(
                       color: Colors.teal.shade50,
                       borderRadius: BorderRadius.circular(12),
                     ),
-
                     child: Column(
                       children: const [
-                        Icon(
-                          Icons.place,
-                          size: 36,
-                          color: Colors.teal,
-                        ),
-
+                        Icon(Icons.place, size: 36, color: Colors.teal),
                         SizedBox(height: 8),
-
                         Text(
                           '18',
                           style: TextStyle(
@@ -141,7 +100,6 @@ class TelaDashboard extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-
                         Text(
                           'Locais Visitados',
                           style: TextStyle(
@@ -153,23 +111,14 @@ class TelaDashboard extends StatelessWidget {
                     ),
                   ),
                 ),
-
                 const SizedBox(width: 12.0),
-
-                // ======================================
-                // CARD 3 - FOTOS
-                // DESAFIO 01
-                // ======================================
-
                 Expanded(
                   child: Container(
                     padding: const EdgeInsets.all(16.0),
-
                     decoration: BoxDecoration(
                       color: Colors.teal.shade100,
                       borderRadius: BorderRadius.circular(12),
                     ),
-
                     child: Column(
                       children: const [
                         Icon(
@@ -177,9 +126,7 @@ class TelaDashboard extends StatelessWidget {
                           size: 36,
                           color: Colors.teal,
                         ),
-
                         SizedBox(height: 8),
-
                         Text(
                           '45',
                           style: TextStyle(
@@ -187,7 +134,6 @@ class TelaDashboard extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-
                         Text(
                           'Fotos',
                           style: TextStyle(
@@ -201,59 +147,32 @@ class TelaDashboard extends StatelessWidget {
                 ),
               ],
             ),
-
             const SizedBox(height: 24.0),
-
-            // ==========================================
-            // DESTAQUE DA SEMANA
-            // ==========================================
 
             const Text(
               'Destaque da Semana',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-
             const SizedBox(height: 16.0),
 
-            // ==========================================
-            // STACK
-            // Selo "Raro" sobre o Card
-            // ==========================================
-
+            // SOBREPOSICAO usando Stack (Selo de Notificacao sobre o Card)
             Stack(
               clipBehavior: Clip.none,
-
               children: [
                 Container(
                   width: double.infinity,
-
                   padding: const EdgeInsets.all(20.0),
-
                   decoration: BoxDecoration(
                     color: Colors.grey.shade100,
                     borderRadius: BorderRadius.circular(12),
-                    border: Border.all(
-                      color: Colors.grey.shade300,
-                    ),
+                    border: Border.all(color: Colors.grey.shade300),
                   ),
-
                   child: Row(
                     children: [
-                      const Icon(
-                        Icons.star,
-                        size: 48,
-                        color: Colors.amber,
-                      ),
-
+                      const Icon(Icons.star, size: 48, color: Colors.amber),
                       const SizedBox(width: 16),
-
                       Column(
-                        crossAxisAlignment:
-                            CrossAxisAlignment.start,
-
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: const [
                           Text(
                             'Gaviao-Real',
@@ -262,38 +181,27 @@ class TelaDashboard extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-
                           Text(
                             'Avistado no Parque Central',
-                            style: TextStyle(
-                              color: Colors.grey,
-                            ),
+                            style: TextStyle(color: Colors.grey),
                           ),
                         ],
                       ),
                     ],
                   ),
                 ),
-
-                // ======================================
-                // SELO RARO
-                // ======================================
-
                 Positioned(
                   top: -8,
                   right: -8,
-
                   child: Container(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 8,
                       vertical: 4,
                     ),
-
                     decoration: BoxDecoration(
                       color: Colors.red,
                       borderRadius: BorderRadius.circular(12),
                     ),
-
                     child: const Text(
                       'Raro',
                       style: TextStyle(
@@ -312,4 +220,3 @@ class TelaDashboard extends StatelessWidget {
     );
   }
 }
-
