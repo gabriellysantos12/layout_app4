@@ -245,10 +245,25 @@ class TelaDashboard extends StatelessWidget {
                 ],
               ),
             ),
+	    // ===== DESAFIO 4 =====
+            // Removido Expanded e adicionado texto longo para provocar overflow
+            const SizedBox(height: 24.0),
+
+            Row(
+              children: [
+                const Icon(
+                  Icons.warning,
+                  color: Colors.red,
+                ),
+                const Text(
+                  'Este e um texto extremamente longo utilizado propositalmente para provocar um overflow horizontal na Row e mostrar as faixas amarelas e pretas do Flutter.',
+                ),
+              ],
+            ),
           ],
         ),
       ),
     );
   }
 }
-
+    
