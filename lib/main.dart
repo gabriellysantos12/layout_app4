@@ -54,36 +54,44 @@ class TelaDashboard extends StatelessWidget {
 
             // ===== DESAFIO 7 =====
             // Criado widget BlocoEstatistica para reutilizar os cards
-            Row(
-              children: [
-                Expanded(
-                  child: BlocoEstatistica(
+
+            // ===== DESAFIO 8 =====
+            // Alterado para GridView com 4 cards em 2x2
+            SizedBox(
+              height: 300,
+              child: GridView.count(
+                crossAxisCount: 2,
+                crossAxisSpacing: 12.0,
+                mainAxisSpacing: 12.0,
+                children: [
+                  BlocoEstatistica(
                     icone: Icons.flutter_dash,
                     numero: '124',
                     descricao: 'Aves Vistas',
                     cor: Colors.teal.shade100,
                   ),
-                ),
-                const SizedBox(width: 12.0),
-                Expanded(
-                  child: BlocoEstatistica(
+                  BlocoEstatistica(
                     icone: Icons.place,
                     numero: '18',
                     descricao: 'Locais Visitados',
                     cor: Colors.teal.shade50,
                   ),
-                ),
-                const SizedBox(width: 12.0),
-                Expanded(
-                  child: BlocoEstatistica(
+                  BlocoEstatistica(
                     icone: Icons.camera_alt,
                     numero: '45',
                     descricao: 'Fotos',
                     cor: Colors.teal.shade100,
                   ),
-                ),
-              ],
+                  BlocoEstatistica(
+                    icone: Icons.star,
+                    numero: '12',
+                    descricao: 'Destaques',
+                    cor: Colors.teal.shade50,
+                  ),
+                ],
+              ),
             ),
+
             const SizedBox(height: 24.0),
 
             const Text(
