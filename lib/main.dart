@@ -214,9 +214,41 @@ class TelaDashboard extends StatelessWidget {
                 ),
               ],
             ),
+ 		// ===== DESAFIO 3 =====
+            	// Adicionada a seção Ultimos Registros
+            const SizedBox(height: 24.0),
+
+            Container(
+              padding: const EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                color: Colors.grey.shade100,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Icon(
+                    Icons.list,
+                    color: Colors.teal,
+                  ),
+                  const Text(
+                    'Ultimos Registros',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: const Text('Ver'),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 }
+
